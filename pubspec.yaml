@@ -17,6 +17,7 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_launcher_icons: ^0.14.4
   flutter_native_splash: ^2.4.6
+  flutter_flavorizr: ^2.4.1
 
 flutter:
   uses-material-design: true
@@ -54,3 +55,52 @@ flutter_native_splash:
     color_dark: "#121212"
     icon_background_color_dark: "#121212"
     image_dark: "assets/android/app-icon-foreground.png"
+
+
+# Flutter Flavorizr
+flavorizr:
+  ide: "vscode"
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+    
+  flavors:
+    dev:
+      app:
+        name: "petalytic Dev"
+      android:
+        applicationId: "com.paulyswen.petalytic.dev"
+        icon: "assets/dev/app-icon.png"
+        adaptiveIcon:
+          foreground: "assets/dev/app-icon-foreground.png"
+          background: "assets/android/app-icon-background.png"
+      ios:
+        bundleId: "com.paulyswen.petalytic.dev"
+        icon: "assets/dev/app-icon.png"
+    
+
+    stg:
+      app:
+        name: "petalytic Stg"
+      android:
+        applicationId: "com.paulyswen.petalytic.stg"  
+        icon: "assets/stg/app-icon.png"
+        adaptiveIcon:
+          foreground: "assets/stg/app-icon-foreground.png"
+          background: "assets/android/app-icon-background.png"
+      ios:
+        bundleId: "com.paulyswen.petalytic.stg"
+        icon: "assets/stg/app-icon.png"
+
+    prod:
+      app:
+        name: "petalytic"
+      android:
+        applicationId: "com.paulyswen.petalytic"  
+        icon: "assets/prod/app-icon.png"
+        adaptiveIcon:
+          foreground: "assets/prod/app-icon-foreground.png"
+          background: "assets/android/app-icon-background.png"
+      ios:
+        bundleId: "com.paulyswen.petalytic"
+        icon: "assets/prod/app-icon.png"
