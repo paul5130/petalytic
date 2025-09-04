@@ -270,6 +270,7 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				49E96387A2C437A4EEA1AB8A /* [CP] Embed Pods Frameworks */,
+				0459CF240E39EB6B39C73C0C /* FlutterFire: "flutterfire bundle-service-file" */,
 			);
 			buildRules = (
 			);
@@ -353,6 +354,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0459CF240E39EB6B39C73C0C /* FlutterFire: "flutterfire bundle-service-file" */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "FlutterFire: \"flutterfire bundle-service-file\"";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n#!/bin/bash\nPATH=\"${PATH}:$FLUTTER_ROOT/bin:${PUB_CACHE}/bin:$HOME/.pub-cache/bin\"\nflutterfire bundle-service-file --plist-destination=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\" --build-configuration=${CONFIGURATION} --platform=ios --apple-project-path=\"${SRCROOT}\"\n";
+		};
 		1C51DE83B94CD0E235817934 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,6 +519,7 @@
 			baseConfigurationReference = 73933E16FC45FBC3A5C7DCB9 /* prodRelease.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F8N5N23PWK;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Release-prod";
@@ -581,6 +601,7 @@
 			baseConfigurationReference = F1F81947F1F04A108EDF8006 /* stgProfile.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F8N5N23PWK;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Profile-stg";
@@ -662,6 +683,7 @@
 			baseConfigurationReference = BA330D53098ABBFE81958769 /* devRelease.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F8N5N23PWK;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Release-dev";
@@ -798,6 +820,7 @@
 				DEVELOPMENT_TEAM = F8N5N23PWK;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -935,6 +958,7 @@
 			baseConfigurationReference = B1D5DCA1E83B206F7438BB39 /* devProfile.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F8N5N23PWK;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Profile-dev";
@@ -1019,6 +1043,7 @@
 			baseConfigurationReference = 29A1BA2A088C8DA882D392BD /* devDebug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F8N5N23PWK;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Debug-dev";
@@ -1028,6 +1053,7 @@
 			baseConfigurationReference = 8F37CBB1ACB88A3FD14F6378 /* stgRelease.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F8N5N23PWK;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Release-stg";
@@ -1037,6 +1063,7 @@
 			baseConfigurationReference = 27C99DA3A9DD72DD2099BC2A /* prodProfile.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F8N5N23PWK;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Profile-prod";
@@ -1162,6 +1189,7 @@
 				DEVELOPMENT_TEAM = F8N5N23PWK;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1185,6 +1213,7 @@
 				DEVELOPMENT_TEAM = F8N5N23PWK;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1349,6 +1378,7 @@
 			baseConfigurationReference = 10E794EA9815CAD8E541B66F /* prodDebug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F8N5N23PWK;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Debug-prod";
@@ -1575,6 +1605,7 @@
 			baseConfigurationReference = 0DB16C9BEA13BAFCE6719C5D /* stgDebug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F8N5N23PWK;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Debug-stg";
