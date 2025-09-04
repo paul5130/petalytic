@@ -10,7 +10,7 @@
                 "--flavor",
                 "dev"
             ],
-            "program": "lib/main.dart"
+            "program": "lib/main_dev.dart"
         },
         {
             "name": "dev Profile",
@@ -21,7 +21,7 @@
                 "--flavor",
                 "dev"
             ],
-            "program": "lib/main.dart"
+            "program": "lib/main_dev.dart"
         },
         {
             "name": "dev Release",
@@ -32,7 +32,7 @@
                 "--flavor",
                 "dev"
             ],
-            "program": "lib/main.dart"
+            "program": "lib/main_dev.dart"
         },
         {
             "name": "stg Debug",
@@ -43,7 +43,7 @@
                 "--flavor",
                 "stg"
             ],
-            "program": "lib/main.dart"
+            "program": "lib/main_stg.dart"
         },
         {
             "name": "stg Profile",
@@ -54,7 +54,7 @@
                 "--flavor",
                 "stg"
             ],
-            "program": "lib/main.dart"
+            "program": "lib/main_stg.dart"
         },
         {
             "name": "stg Release",
@@ -65,7 +65,7 @@
                 "--flavor",
                 "stg"
             ],
-            "program": "lib/main.dart"
+            "program": "lib/main_stg.dart"
         },
         {
             "name": "prod Debug",
@@ -76,7 +76,7 @@
                 "--flavor",
                 "prod"
             ],
-            "program": "lib/main.dart"
+            "program": "lib/main_prod.dart"
         },
         {
             "name": "prod Profile",
@@ -87,7 +87,7 @@
                 "--flavor",
                 "prod"
             ],
-            "program": "lib/main.dart"
+            "program": "lib/main_prod.dart"
         },
         {
             "name": "prod Release",
@@ -98,7 +98,7 @@
                 "--flavor",
                 "prod"
             ],
-            "program": "lib/main.dart"
+            "program": "lib/main_prod.dart"
         }
     ]
 }
