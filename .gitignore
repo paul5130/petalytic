@@ -16,12 +16,18 @@ migrate_working_dir/
 *.iml
 *.ipr
 *.iws
-.idea/
+.idea/libraries/
+.idea/*.xml
+android/.idea/**/*.xml
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
 # is commented out by default.
 #.vscode/
+.vscode/settings.json
+
+# SpecStory
+.specstory/
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -43,3 +49,30 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
+# Firebase configuration files
+firebase.json
+lib/firebase_options*.dart
+ios/Runner/GoogleService-Info.plist
+ios/flavors/*/GoogleService-Info.plist
+ios/firebase_app_id_file.json
+macos/Runner/GoogleService-Info.plist
+macos/flavors/*/GoogleService-Info.plist
+macos/firebase_app_id_file.json
+android/app/google-services.json
+android/app/src/*/google-services.json
+flutterfire-config.sh
+
+# Firebase (other)
+.firebase/
+
+# Environments
+*.env
+*.env.dev
+*.env.stg
+*.env.prod
+
+# FVM Version Cache
+.fvm/
+.fvmrc
