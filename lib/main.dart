@@ -8,6 +8,10 @@ import 'flavors.dart';
 
 Future<void> runMainApp({required FirebaseOptions firebaseOptions}) async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   await Firebase.initializeApp(options: firebaseOptions);
   final container = ProviderContainer();
 

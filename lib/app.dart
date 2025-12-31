@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petalytic/home_page.dart';
+import 'package:petalytic/pages/home_page.dart';
 
 import 'flavors.dart';
 

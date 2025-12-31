@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petalytic/photo_capture_page.dart';
+import 'package:petalytic/pages/video_player_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -40,7 +40,8 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const PhotoCapturePage(),
+                      // builder: (context) => const DetectionPage(),
+                      builder: (context) => const VideoPlayerPage(),
                     ),
                   );
                 },

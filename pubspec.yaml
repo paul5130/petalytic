@@ -18,6 +18,8 @@ dependencies:
   camera: ^0.11.2
   path_provider: ^2.1.5
   path: ^1.9.1
+  google_mlkit_object_detection: ^0.15.0
+  video_player: ^2.10.0
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +35,8 @@ flutter:
   assets:
     - assets/common/
     - assets/images/
+    - assets/ml/object_labeler.tflite
+    - assets/videos/
 
 # Flutter Launcher Icons configuration
 flutter_launcher_icons:

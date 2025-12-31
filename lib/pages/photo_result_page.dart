@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:petalytic/health_result_page.dart';
+import 'package:petalytic/pages/health_result_page.dart';
 
 class PhotoResultPage extends StatelessWidget {
   final String imagePath;
