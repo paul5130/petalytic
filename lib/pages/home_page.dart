@@ -37,12 +37,48 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      // builder: (context) => const DetectionPage(),
-                      builder: (context) => const VideoPlayerPage(),
+                  showModalBottomSheet(
+                    context: context,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(20),
+                      ),
                     ),
+                    builder: (BuildContext context) {
+                      return SafeArea(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              leading: const Icon(Icons.camera_alt),
+                              title: const Text('使用相機'),
+                              onTap: () {
+                                Navigator.pop(context);
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //     builder: (context) => const VideoPlayerPage(),
+                                //   ),
+                                // );
+                              },
+                            ),
+                            ListTile(
+                              leading: const Icon(Icons.photo_library),
+                              title: const Text('從相簿選擇'),
+                              onTap: () {
+                                Navigator.pop(context);
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //     builder: (context) => const VideoPlayerPage(),
+                                //   ),
+                                // );
+                              },
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -56,7 +92,7 @@ class HomePage extends StatelessWidget {
                     vertical: 12,
                   ),
                 ),
-                child: const Text('開始拍照'),
+                child: const Text('開始拍照/選擇照片'),
               ),
             ],
           ),
