@@ -1,11 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:petalytic/pages/video_player_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
 
-class HomePage extends StatelessWidget {
+import '../providers/gemini_analysis_provider.dart';
+import 'gemini_result_page.dart';
+
+class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
+  Future<void> _pickAndAnalyze(
+    BuildContext context,
+    WidgetRef ref,
+    ImageSource source,
+  ) async {
+    final picker = ImagePicker();
+    final picked = await picker.pickImage(source: source, imageQuality: 85);
+    if (picked == null) return;
+
+    final imageBytes = await picked.readAsBytes();
+    if (!context.mounted) return;
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => const Center(child: CircularProgressIndicator()),
+    );
+
+    try {
+      final analysis = await ref
+          .read(geminiAnalysisProvider.notifier)
+          .analyzeImage(imageBytes);
+
+      if (!context.mounted) return;
+      Navigator.of(context, rootNavigator: true).pop();
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) =>
+              GeminiResultPage(imageBytes: imageBytes, analysis: analysis),
+        ),
+      );
+    } catch (error) {
+      if (!context.mounted) return;
+      Navigator.of(context, rootNavigator: true).maybePop();
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('分析失敗：$error')));
+    }
+  }
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Stack(
       children: [
         SizedBox.expand(
@@ -44,7 +89,7 @@ class HomePage extends StatelessWidget {
                         top: Radius.circular(20),
                       ),
                     ),
-                    builder: (BuildContext context) {
+                    builder: (BuildContext sheetContext) {
                       return SafeArea(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -53,26 +98,24 @@ class HomePage extends StatelessWidget {
                               leading: const Icon(Icons.camera_alt),
                               title: const Text('使用相機'),
                               onTap: () {
-                                Navigator.pop(context);
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: (context) => const VideoPlayerPage(),
-                                //   ),
-                                // );
+                                Navigator.pop(sheetContext);
+                                _pickAndAnalyze(
+                                  context,
+                                  ref,
+                                  ImageSource.camera,
+                                );
                               },
                             ),
                             ListTile(
                               leading: const Icon(Icons.photo_library),
                               title: const Text('從相簿選擇'),
                               onTap: () {
-                                Navigator.pop(context);
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: (context) => const VideoPlayerPage(),
-                                //   ),
-                                // );
+                                Navigator.pop(sheetContext);
+                                _pickAndAnalyze(
+                                  context,
+                                  ref,
+                                  ImageSource.gallery,
+                                );
                               },
                             ),
                           ],
